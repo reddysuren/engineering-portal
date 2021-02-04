@@ -74,7 +74,7 @@ const Post = ({ post, relatedPost }) => {
             <div className={`${headStyles.tag} ${headStyles.pinned}`}>
               {tags &&
                 tags.map(tag => (
-                  <Link to={`/blog/tags/${kebabCase(tag)}/`}> {tag} </Link>
+                  <Link to={`/tags/${kebabCase(tag)}/`}> {tag} </Link>
                 ))}
             </div>
             <div className={headStyles.description}>
@@ -120,7 +120,7 @@ const Post = ({ post, relatedPost }) => {
                         </div>
                         <div class={styles.tag}>
                           {node.frontmatter.tags.map(tag => (
-                            <Link to={`/blog/tags/${kebabCase(tag)}/`}>
+                            <Link to={`/tags/${kebabCase(tag)}/`}>
                               {tag}
                             </Link>
                           ))}
@@ -175,7 +175,7 @@ const Post = ({ post, relatedPost }) => {
                 <h3>LoginRadius Docs</h3>
                 <p>Implement Authentication in Minutes</p>
                 <a
-                  className={"btn-primary"}
+                  className={"btn-primary ga_event"}
                   href={"https://www.loginradius.com/docs/developer"}
                   key={"docs-link"}
                   target="_blank"
@@ -215,8 +215,8 @@ const Post = ({ post, relatedPost }) => {
                 already loved by over 3,000 businesses with a monthly reach of
                 1.17 billion users worldwide.
                 <a
-                  href="https://accounts.loginradius.com/?utm_source=async&utm_medium=blog&utm_campaign=fodb"
-                  className={"btn-primary btn-cta"}
+                  href="https://accounts.loginradius.com/auth.aspx?action=register&return_url=https://dashboard.loginradius.com/login&utm_source=async&utm_medium=blog&utm_campaign=fodb"
+                  className={"btn-primary btn-cta ga_event"}
                   onClick={() =>
                     eventLogger({
                       category: "LoginRadius Home",
@@ -243,7 +243,7 @@ const Post = ({ post, relatedPost }) => {
               <div class={styles.aboutAuthorInner}>
                 <h3>{author.id}</h3>
                 <p>{author.bio}</p>
-                <Link to={`/blog/author/${_.kebabCase(author.id)}/`}>
+                <Link to={`/author/${_.kebabCase(author.id)}/`}>
                   View Profile
                 </Link>
               </div>
